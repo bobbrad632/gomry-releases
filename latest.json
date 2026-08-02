@@ -1,7 +1,7 @@
 {
-  "versionName": "0.3.2",
-  "versionCode": 5,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.3.2/gomry-v0.3.2.apk",
-  "sha256": "6acbb522a4a2659ef58eacde6170f361b364047a68798a9019c925a4b9d2c9cc",
-  "notes": "Fix in-app update download: manual redirect following for GitHub Release URLs."
+  "versionName": "0.3.3",
+  "versionCode": 6,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.3.3/gomry-v0.3.3.apk",
+  "sha256": "41ceeae31d985ce8fe5598da1af33423f12c285b6b849b2b79b9df8da3eb9754",
+  "notes": "Fix SMS login and in-app update download."
 }
