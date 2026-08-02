@@ -1,0 +1,7 @@
+{
+  "versionName": "0.1.0",
+  "versionCode": 1,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.1.0/gomry-v0.1.0.apk",
+  "sha256": "816df4288d55090e61ed1fb8bf84bd5f40b02b0f931baf9dac0622665bcdd1b5",
+  "notes": "First production release: SMS auth, country picker (FR/DZ), in-app update system."
+}
