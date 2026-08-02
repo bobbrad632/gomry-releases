@@ -1,7 +1,7 @@
 {
-  "versionName": "0.3.0",
-  "versionCode": 3,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.3.0/gomry-v0.3.0.apk",
-  "sha256": "1d8be8d407d8e657116eaf324f5ca3574615f7a4daa600fb6df926374332decc",
-  "notes": "Fix APK download (streaming), cache settings (contact sync no longer flashes), remove duplicate date icon."
+  "versionName": "0.3.1",
+  "versionCode": 4,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.3.1/gomry-v0.3.1.apk",
+  "sha256": "2ec87ba2b176e991262dc09cb355b41562c6d97d7e6f74d51b6f58dd22c11a01",
+  "notes": "Fix in-app update download: streamed download with proper redirect handling."
 }
