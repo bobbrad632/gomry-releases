@@ -1,7 +1,7 @@
 {
-  "versionName": "0.3.3",
-  "versionCode": 6,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.3.3/gomry-v0.3.3.apk",
-  "sha256": "41ceeae31d985ce8fe5598da1af33423f12c285b6b849b2b79b9df8da3eb9754",
-  "notes": "Fix SMS login and in-app update download."
+  "versionName": "0.4.0",
+  "versionCode": 7,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.0/gomry-v0.4.0.apk",
+  "sha256": "de6216f31ff61120f21680644e53f98a2abdbd59f92edfb32a6c5172f0ec7f75",
+  "notes": "New Gomry dove app icon and branded splash screen."
 }
