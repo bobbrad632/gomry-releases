@@ -1,7 +1,7 @@
 {
-  "versionName": "0.1.0",
-  "versionCode": 1,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.1.0/gomry-v0.1.0.apk",
-  "sha256": "816df4288d55090e61ed1fb8bf84bd5f40b02b0f931baf9dac0622665bcdd1b5",
-  "notes": "First production release: SMS auth, country picker (FR/DZ), in-app update system."
+  "versionName": "0.2.0",
+  "versionCode": 2,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.2.0/gomry-v0.2.0.apk",
+  "sha256": "395cd9611fbc58d7da0c618776a6181df1d527b7f500b4340c39235b0b9a0701",
+  "notes": "Cached user data (no more loading flashes), check for update in settings."
 }
