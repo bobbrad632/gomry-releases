@@ -1,7 +1,7 @@
 {
-  "versionName": "0.4.1",
-  "versionCode": 8,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.1/gomry-v0.4.1.apk",
-  "sha256": "e9ce235658526aba3f6729a3935514887fa0ffc541126394dbcf1fb3ef9cdb78",
-  "notes": "Fix splash screen: solid white dove icon."
+  "versionName": "0.4.2",
+  "versionCode": 9,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.2/gomry-v0.4.2.apk",
+  "sha256": "7b700aae61621760239da81a9b3dd847e5b206bd566e8fb2a0a18283e48c31a0",
+  "notes": "Download progress bar with percentage."
 }
