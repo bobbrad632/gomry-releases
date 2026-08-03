@@ -1,7 +1,7 @@
 {
-  "versionName": "0.4.3",
-  "versionCode": 10,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.3/gomry-v0.4.3.apk",
-  "sha256": "7ed37ae30fd5005291362690826e7501f5a51538ccec29b075aa064980d6a957",
-  "notes": "UI polish: trip card redesign, branded splash screen, search improvements, auth fixes."
+  "versionName": "0.4.4",
+  "versionCode": 11,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.4/gomry-v0.4.4.apk",
+  "sha256": "a514a21a4b7916d88ba1e3c9eed10aa8cfd8046b5adac4a56c32e9070332a354",
+  "notes": "Fix in-app update system: native install intent, cache-busting, permission checks."
 }
