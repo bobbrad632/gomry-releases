@@ -1,7 +1,7 @@
 {
-  "versionName": "0.4.4",
-  "versionCode": 11,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.4/gomry-v0.4.4.apk",
-  "sha256": "a514a21a4b7916d88ba1e3c9eed10aa8cfd8046b5adac4a56c32e9070332a354",
-  "notes": "Fix in-app update system: native install intent, cache-busting, permission checks."
+  "versionName": "0.4.5",
+  "versionCode": 12,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.5/gomry-v0.4.5.apk",
+  "sha256": "b4af81f818ee953321ec6738398cb4e6d2ef6702372beace40ab62af2ee4e0af",
+  "notes": "3-layer splash screen: consistent branding across all Android OEMs."
 }
