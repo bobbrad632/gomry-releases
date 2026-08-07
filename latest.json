@@ -1,7 +1,7 @@
 {
-  "versionName": "0.4.7",
-  "versionCode": 14,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.7/gomry-v0.4.7.apk",
-  "sha256": "2d76322af782ae835895d83ee105802f6c66d3fd24b619757ee5a8fc15112780",
-  "notes": "Supabase delivery lifecycle: handover, delivered, confirm received with dual-confirmation and Supabase write-back."
+  "versionName": "0.4.8",
+  "versionCode": 15,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.8/gomry-v0.4.8.apk",
+  "sha256": "b1ced1c719f81b5d727463454ce09db499d1404ceb524e6b3d52d91b7e2c8410",
+  "notes": "Fix SMS OTP resend button, fix APK installation on Android 14+ devices, fix install permission retry flow."
 }
