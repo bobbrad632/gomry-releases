@@ -1,7 +1,7 @@
 {
-  "versionName": "0.4.8",
-  "versionCode": 15,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.8/gomry-v0.4.8.apk",
-  "sha256": "b1ced1c719f81b5d727463454ce09db499d1404ceb524e6b3d52d91b7e2c8410",
-  "notes": "Fix SMS OTP resend button, fix APK installation on Android 14+ devices, fix install permission retry flow."
+  "versionName": "0.4.9",
+  "versionCode": 16,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.9/gomry-v0.4.9.apk",
+  "sha256": "205cc8891926b46c11a7230b7eebf8fad0f92c4b6a1d7ea1d31f04f0c549f036",
+  "notes": "Parcel tracking progress bar on parcel cards, profile photo upload, route preferences, greeting fix, home screen instant name."
 }
