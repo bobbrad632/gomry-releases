@@ -164,7 +164,7 @@
   </div>
   <div class="header-meta">
     <strong>2-week sprint window</strong><br>
-    57 features · 9 categories · <strong style="color:#7EE8A2">7 done</strong><br>
+    57 features · 9 categories · <strong style="color:#7EE8A2">11 done</strong><br>
     Filter by impact or effort below
   </div>
 </div>
@@ -221,10 +221,10 @@ const FEATURES = [
   // TRUST & SAFETY
   { icon:'📸', title:'Profile photo upload', desc:'Let users upload a photo via Supabase Storage. A face is the single biggest trust signal on the platform — initials alone make the app feel anonymous.', cat:'trust', impact:'high', effort:'moderate' },
   { icon:'🛡️', title:'Trust score on trip & parcel cards', desc:'Composite trust score (ratings + deliveries completed + network depth) shown directly on trip and parcel cards, so senders can compare travelers at a glance.', cat:'trust', impact:'high', effort:'moderate' },
-  { icon:'🚩', title:'Report user / flag content', desc:'Simple one-tap report flow for trips, parcels, and profiles. Stores reports in Supabase; no admin dashboard needed for the private beta — just collect the signals.', cat:'trust', impact:'high', effort:'easy', done: true },
+  { icon:'🚩', title:'Report user / flag content', desc:'Simple one-tap report flow for trips, parcels, and profiles. Stores reports in Supabase; no admin dashboard needed for the private beta — just collect the signals.', cat:'trust', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'🪪', title:'Self-declared identity verification', desc:'"I confirm my identity matches my profile" with document type selection (passport / ID / driver\'s licence). Shows a "Self-verified" badge. No KYC infrastructure required.', cat:'trust', impact:'medium', effort:'easy' },
   { icon:'🚫', title:'Block user', desc:'Prevent a blocked user from seeing your trips, parcels, or messaging you. Stored in Supabase and enforced in query filters.', cat:'trust', impact:'medium', effort:'moderate' },
-  { icon:'📋', title:'Prohibited items joint confirmation', desc:'At booking confirmation, both parties explicitly accept the prohibited items list. Creates a shared acceptance record and reduces disputes later.', cat:'trust', impact:'high', effort:'easy' },
+  { icon:'📋', title:'Prohibited items joint confirmation', desc:'At booking confirmation, both parties explicitly accept the prohibited items list. Creates a shared acceptance record and reduces disputes later.', cat:'trust', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'📍', title:'Handover location pin', desc:'Traveler and sender agree on a meeting point — drop a pin or enter a landmark name. Reduces last-minute coordination confusion on departure day.', cat:'trust', impact:'high', effort:'moderate' },
 
   // DISCOVERY
@@ -232,35 +232,35 @@ const FEATURES = [
   { icon:'🔕', title:'"Alert me for this route"', desc:'Sender sets a saved route (e.g. Paris → Algiers) and gets a push notification when a new trip is posted. Essential for low-frequency or niche city pairs.', cat:'discovery', impact:'high', effort:'moderate' },
   { icon:'🗓️', title:'Date-range trip search', desc:'Filter Explore trips by departure window ("next 2 weeks", "this month"). Currently there is no granular date filtering.', cat:'discovery', impact:'high', effort:'easy' },
   { icon:'🗺️', title:'Map view for trips', desc:'Show trip routes as curved arcs on a map (origin → destination). Visually distinctive and on-brand for a travel marketplace. Big wow factor for new users.', cat:'discovery', impact:'medium', effort:'complex' },
-  { icon:'📦', title:'Parcel size compatibility indicator', desc:'On each trip card, show which sizes still have capacity (S ✓  M ✓  L ✗). Senders instantly see if their parcel fits without opening the detail screen.', cat:'discovery', impact:'high', effort:'easy', done: true },
+  { icon:'📦', title:'Parcel size compatibility indicator', desc:'On each trip card, show which sizes still have capacity (S ✓  M ✓  L ✗). Senders instantly see if their parcel fits without opening the detail screen.', cat:'discovery', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'⚡', title:'"Departing soon" badge on trips', desc:'Highlight trips leaving within 72 h with an orange badge. Creates urgency and helps senders with tight deadlines find the right traveler fast.', cat:'discovery', impact:'medium', effort:'easy' },
   { icon:'🤝', title:'Suggested matches on Home', desc:'"3 trips match your parcel to Algiers this week" — a targeted match widget above the trip feed. Directly drives the booking conversion that generates credits.', cat:'discovery', impact:'high', effort:'moderate' },
 
   // CHAT & COMMS
   { icon:'🖼️', title:'Image sharing in chat', desc:'Send photos of the parcel, its packaging, or the handover point. Essential for confirming parcel condition before handover and for dispute resolution.', cat:'comms', impact:'high', effort:'moderate' },
-  { icon:'✅', title:'Read receipts in chat', desc:'Show "Seen" under messages. Reduces follow-up anxiety — the sender knows the traveler actually read the message.', cat:'comms', impact:'medium', effort:'easy', done: true },
+  { icon:'✅', title:'Read receipts in chat', desc:'Show "Seen" under messages. Reduces follow-up anxiety — the sender knows the traveler actually read the message.', cat:'comms', impact:'medium', effort:'easy', done: true, author: 'Merwan' },
   { icon:'💬', title:'Quick-reply message templates', desc:'Pre-written tappable replies: "I\'ll be there at 18h", "Parcel is ready", "Meet at Terminal 2D". Reduces friction for mobile users and non-native typers.', cat:'comms', impact:'medium', effort:'easy' },
   { icon:'📱', title:'WhatsApp handoff button in chat', desc:'A "Continue on WhatsApp" button that opens wa.me with the other user\'s number (requires consent). Meets users where they already communicate for family coordination.', cat:'comms', impact:'high', effort:'easy' },
   { icon:'🔕', title:'Mute conversation', desc:'Mute push notifications per booking thread. Useful once delivery is arranged and both parties are just waiting.', cat:'comms', impact:'medium', effort:'easy' },
 
   // TRAVELER
-  { icon:'📤', title:'Trip sharing via native share sheet', desc:'One-tap share a trip link via WhatsApp, SMS, or copy to clipboard. Travelers naturally share trips in family WhatsApp groups — this is free organic growth with zero marketing cost.', cat:'traveler', impact:'high', effort:'easy', done: true },
+  { icon:'📤', title:'Trip sharing via native share sheet', desc:'One-tap share a trip link via WhatsApp, SMS, or copy to clipboard. Travelers naturally share trips in family WhatsApp groups — this is free organic growth with zero marketing cost.', cat:'traveler', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'🛣️', title:'Multi-stop trips', desc:'Traveler adds a stopover city (Paris → Lyon → Algiers). Expands the matching surface significantly and reflects how many flights actually work.', cat:'traveler', impact:'medium', effort:'complex' },
   { icon:'📅', title:'Calendar view of my trips', desc:'Trips tab with a monthly calendar grid showing departure dates. Better at-a-glance planning for travelers who make multiple trips per month.', cat:'traveler', impact:'medium', effort:'moderate' },
-  { icon:'📊', title:'Live capacity tracker on trip card', desc:'Show remaining capacity (2 of 3 small slots used) on the traveler\'s own trip card so they know how full they are without opening the detail.', cat:'traveler', impact:'high', effort:'easy' },
+  { icon:'📊', title:'Live capacity tracker on trip card', desc:'Show remaining capacity (2 of 3 small slots used) on the traveler\'s own trip card so they know how full they are without opening the detail.', cat:'traveler', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'🧳', title:'Regular routes on traveler profile', desc:'Traveler sets their typical routes (Paris ↔ Algiers, monthly). Shown on their profile and used for proactive match suggestions on the Home screen.', cat:'traveler', impact:'medium', effort:'moderate' },
-  { icon:'🏅', title:'Verified traveler badge', desc:'Auto-awarded after completing N deliveries (e.g. 3). Appears on trip cards and profiles. The first meaningful progression signal that drives repeat use without heavy gamification.', cat:'traveler', impact:'high', effort:'easy', done: true },
+  { icon:'🏅', title:'Verified traveler badge', desc:'Auto-awarded after completing N deliveries (e.g. 3). Appears on trip cards and profiles. The first meaningful progression signal that drives repeat use without heavy gamification.', cat:'traveler', impact:'high', effort:'easy', done: true, author: 'Merwan' },
 
   // SENDER
   { icon:'📍', title:'Parcel tracking timeline (prominent)', desc:'A visual step-by-step timeline of the parcel\'s journey (Requested → Accepted → Handover → In Transit → Delivered) as the primary parcel view, not buried inside a booking detail.', cat:'sender', impact:'high', effort:'moderate' },
-  { icon:'🧾', title:'Receiver information field', desc:'Sender specifies who collects the parcel on the other end: name + phone number. Displayed to the traveler for final delivery. A real-world requirement that currently has no field.', cat:'sender', impact:'high', effort:'easy', done: true },
+  { icon:'🧾', title:'Receiver information field', desc:'Sender specifies who collects the parcel on the other end: name + phone number. Displayed to the traveler for final delivery. A real-world requirement that currently has no field.', cat:'sender', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'📷', title:'Parcel photo (proof of condition)', desc:'Sender uploads a photo of the parcel before handover; traveler can upload a delivery photo on completion. Provides evidence for dispute resolution and builds trust between strangers.', cat:'sender', impact:'high', effort:'moderate' },
   { icon:'📋', title:'Multiple parcels per booking', desc:'Sender books 2–3 small items under one booking (medicine + documents + gift). A very common real-world case for France–Algeria shipments.', cat:'sender', impact:'medium', effort:'complex' },
   { icon:'📅', title:'Estimated delivery date', desc:'Based on trip departure date, show "Expected delivery: around Aug 22" on the parcel card. Simple arithmetic, high reassurance value for anxious senders.', cat:'sender', impact:'medium', effort:'easy' },
   { icon:'💾', title:'Parcel draft auto-save', desc:'Auto-save the create-parcel form in progress so users can come back to it. Reduces drop-off from the multi-field form on first use.', cat:'sender', impact:'medium', effort:'easy' },
 
   // NETWORK
-  { icon:'📨', title:'Invite contacts via WhatsApp / SMS', desc:'One-tap "Invite a contact" that opens WhatsApp or SMS with a pre-written message and a deep link to Gomry. The primary growth loop for a trust-network app — every existing user is a referral channel.', cat:'network', impact:'high', effort:'easy' },
+  { icon:'📨', title:'Invite contacts via WhatsApp / SMS', desc:'One-tap "Invite a contact" that opens WhatsApp or SMS with a pre-written message and a deep link to Gomry. The primary growth loop for a trust-network app — every existing user is a referral channel.', cat:'network', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'👥', title:'Mutual contacts count on profiles', desc:'"3 contacts in common" shown on a traveler\'s profile. The most powerful trust signal in a social network — it reframes a stranger as a near-peer.', cat:'network', impact:'high', effort:'moderate' },
   { icon:'📰', title:'Network activity feed (light)', desc:'"Karim just completed a delivery", "Sara posted a trip Paris → Algiers". A lightweight feed in the Network tab that makes the community feel active and alive between your own trips.', cat:'network', impact:'medium', effort:'moderate' },
   { icon:'🔗', title:'Shareable profile link', desc:'Each user gets a personal link (gomry.app/u/username). Travelers share it in WhatsApp groups to attract senders directly without going through Explore.', cat:'network', impact:'medium', effort:'moderate' },
@@ -270,7 +270,7 @@ const FEATURES = [
   { icon:'🎁', title:'Credit gifting between users', desc:'Send credits to another user ("Thanks for the delivery, here\'s a small tip"). Deepens reciprocity, community feeling, and turns credits into a social currency.', cat:'credits', impact:'medium', effort:'moderate' },
   { icon:'💡', title:'"Earn more" opportunities widget', desc:'"4 parcels are waiting for your Paris→Algiers route — carry them to earn 20 credits." A targeted home screen card that drives traveler posting directly from the sender demand signal.', cat:'credits', impact:'high', effort:'moderate' },
   { icon:'📈', title:'Credits leaderboard (light)', desc:'Top earners this month shown on the Network or Credits tab. Keeps the economy visible and adds a light competitive layer without heavy gamification.', cat:'credits', impact:'medium', effort:'easy' },
-  { icon:'⚠️', title:'Low balance warning', desc:'When a sender has < 5 credits (cost of one small parcel), show a nudge banner encouraging them to carry a parcel to earn more before they hit zero.', cat:'credits', impact:'high', effort:'easy' },
+  { icon:'⚠️', title:'Low balance warning', desc:'When a sender has < 5 credits (cost of one small parcel), show a nudge banner encouraging them to carry a parcel to earn more before they hit zero.', cat:'credits', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'🔄', title:'Automatic credit refund on cancellation', desc:'If a booking is cancelled before handover, automatically refund the sender\'s full credit debit. Essential for trust — users must know they won\'t lose credits on a no-show.', cat:'credits', impact:'high', effort:'moderate' },
 
   // PROFILE
@@ -281,7 +281,7 @@ const FEATURES = [
   { icon:'🏆', title:'Beta tester founder badge', desc:'A special badge on profiles of the first cohort. Beta users who feel like founders are significantly more likely to stay, refer others, and forgive rough edges.', cat:'profile', impact:'medium', effort:'easy' },
 
   // UX / POLISH
-  { icon:'🎠', title:'Onboarding carousel (first-launch walkthrough)', desc:'4-slide illustrated carousel shown only on first launch. Covers the concept, network, credits, and permissions. Implemented with sembast persistence — never shows again after the first run. Permissions wired to OS dialogs on Android.', cat:'ux', impact:'high', effort:'easy', done: true },
+  { icon:'🎠', title:'Onboarding carousel (first-launch walkthrough)', desc:'4-slide illustrated carousel shown only on first launch. Covers the concept, network, credits, and permissions. Implemented with sembast persistence — never shows again after the first run. Permissions wired to OS dialogs on Android.', cat:'ux', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'🌙', title:'Dark mode', desc:'System-aware dark theme. A large portion of French-Algerian Android users run system dark mode — the current app is jarring for them at night.', cat:'ux', impact:'medium', effort:'moderate' },
   { icon:'🌐', title:'Arabic language + RTL layout', desc:'Arabic UI translation with full right-to-left layout support. A major differentiator for the Algeria market. Many users think and text in darija — an Arabic UI feels like a product built for them.', cat:'ux', impact:'high', effort:'complex' },
   { icon:'📲', title:'In-app feedback & bug report button', desc:'"Report a bug" in Settings that emails the team with device info and an optional screenshot. Non-negotiable during a private beta — email-based feedback has 95% drop-off.', cat:'ux', impact:'high', effort:'easy' },
@@ -338,7 +338,7 @@ function makeCard(f) {
   const card = document.createElement('div');
   card.className = 'card' + (f.done ? ' done' : '');
   card.innerHTML = `
-    ${f.done ? '<div class="done-badge">✅ Done</div>' : ''}
+    ${f.done ? `<div class="done-badge">✅ Done${f.author ? ` · <span style="font-weight:500;opacity:.8">by ${f.author}</span>` : ''}</div>` : ''}
     <div class="card-top">
       <span class="card-icon">${f.icon}</span>
       <span class="card-title">${f.title}</span>
