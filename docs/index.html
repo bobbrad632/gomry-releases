@@ -164,7 +164,7 @@
   </div>
   <div class="header-meta">
     <strong>2-week sprint window</strong><br>
-    58 features · 9 categories · <strong style="color:#7EE8A2">11 done</strong><br>
+    58 features · 9 categories · <strong style="color:#7EE8A2">12 done</strong><br>
     Filter by impact or effort below
   </div>
 </div>
@@ -261,7 +261,7 @@ const FEATURES = [
 
   // NETWORK
   { icon:'📨', title:'Invite contacts via WhatsApp / SMS', desc:'One-tap "Invite a contact" that opens WhatsApp or SMS with a pre-written message and a deep link to Gomry. The primary growth loop for a trust-network app — every existing user is a referral channel.', cat:'network', impact:'high', effort:'easy', done: true, author: 'Merwan' },
-  { icon:'📱', title:'Real contact sync (phone-number matching)', desc:'Read the device contact list, normalize numbers to E.164 (+33 / +213), hash them client-side with SHA-256, and send only the hashes to a Supabase Edge Function — raw phone numbers never leave the device. Edge Function matches against hashed profile phones and returns user profiles. Show a "Found X people you know" sheet with Connect buttons.\n\nMVP: permission request → hash → match → suggest connections.\n\nFinal app: bilateral auto-connect when both users have each other in contacts (strong mutual trust, no request friction); "let contacts find me" privacy toggle (opt-out of discoverability); incremental sync on repeat taps (only new/changed numbers); "Someone from your contacts joined Gomry" push notification (opt-in). Requires flutter_contacts + permission_handler packages and a Supabase Edge Function. Current "Sync contacts" button is a mock — this replaces it.', cat:'network', impact:'high', effort:'moderate' },
+  { icon:'📱', title:'Real contact sync (phone-number matching)', desc:'Read the device contact list, normalize numbers to E.164 (+33 / +213), hash them client-side with SHA-256, and send only the hashes to a Supabase Edge Function — raw phone numbers never leave the device. Edge Function matches against hashed profile phones and returns user profiles. Show a "Found X people you know" sheet with Connect buttons.\n\nMVP: permission request → hash → match → suggest connections.\n\nFinal app: bilateral auto-connect when both users have each other in contacts (strong mutual trust, no request friction); "let contacts find me" privacy toggle (opt-out of discoverability); incremental sync on repeat taps (only new/changed numbers); "Someone from your contacts joined Gomry" push notification (opt-in). Requires flutter_contacts + permission_handler packages and a Supabase Edge Function. Current "Sync contacts" button is a mock — this replaces it.', cat:'network', impact:'high', effort:'moderate', done: true, author: 'Merwan' },
   { icon:'👥', title:'Mutual contacts count on profiles', desc:'"3 contacts in common" shown on a traveler\'s profile. The most powerful trust signal in a social network — it reframes a stranger as a near-peer.', cat:'network', impact:'high', effort:'moderate' },
   { icon:'📰', title:'Network activity feed (light)', desc:'"Karim just completed a delivery", "Sara posted a trip Paris → Algiers". A lightweight feed in the Network tab that makes the community feel active and alive between your own trips.', cat:'network', impact:'medium', effort:'moderate' },
   { icon:'🔗', title:'Shareable profile link', desc:'Each user gets a personal link (gomry.app/u/username). Travelers share it in WhatsApp groups to attract senders directly without going through Explore.', cat:'network', impact:'medium', effort:'moderate' },
