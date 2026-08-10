@@ -1,0 +1,376 @@
+<title>Gomry — Pre-Beta Feature Backlog</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal:       #034F5A;
+    --teal-mid:   #0A6B79;
+    --teal-soft:  #D6ECED;
+    --sky:        #5FBDF8;
+    --bg:         #F5F8F8;
+    --surface:    #FFFFFF;
+    --border:     #DDE8E9;
+    --text:       #073B42;
+    --muted:      #5F7480;
+    --success:    #2E7D4F;
+    --success-bg: #E8F5EC;
+    --warn:       #B45309;
+    --warn-bg:    #FEF3C7;
+    --accent:     #E96B3C;
+    --purple:     #6D28D9;
+    --purple-bg:  #F3F0FF;
+    --radius:     8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:      #0D1E21;
+      --surface: #152B30;
+      --border:  #1E3C42;
+      --text:    #E4ECEC;
+      --muted:   #7CA0A8;
+      --teal-soft: #0A3540;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg:#F5F8F8; --surface:#fff; --border:#DDE8E9; --text:#073B42; --muted:#5F7480; --teal-soft:#D6ECED;
+  }
+  :root[data-theme="dark"] {
+    --bg:#0D1E21; --surface:#152B30; --border:#1E3C42; --text:#E4ECEC; --muted:#7CA0A8; --teal-soft:#0A3540;
+  }
+
+  html { font-size: 15px; }
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    padding: 0 0 60px;
+  }
+
+  .page-header {
+    background: var(--teal);
+    color: #fff;
+    padding: 28px 40px 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .dove { width: 38px; height: 38px; background: rgba(255,255,255,.15); border-radius: 10px; display:flex; align-items:center; justify-content:center; font-size:20px; }
+  .brand-name { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+  .brand-name small { display:block; font-size:11px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-top:1px; }
+  .header-meta { text-align:right; font-size:13px; color:rgba(255,255,255,.65); line-height:1.8; }
+  .header-meta strong { color:#fff; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+  .sticky-bar {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg); border-bottom: 1px solid var(--border); padding: 14px 0;
+  }
+  .filters-wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; gap: 10px; }
+  .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .filter-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); min-width: 62px; }
+  .chip {
+    font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 20px;
+    border: 1.5px solid var(--border); background: var(--surface); color: var(--muted);
+    cursor: pointer; transition: all .14s; user-select: none;
+  }
+  .chip:hover:not(.active) { border-color: var(--teal); color: var(--teal); }
+  .chip.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .chip.done-chip.active { background: var(--success); border-color: var(--success); color: #fff; }
+  .sep { width: 1px; height: 18px; background: var(--border); }
+  .count-badge { margin-left: auto; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 9px;
+    transition: box-shadow .15s;
+    position: relative;
+  }
+  .card:hover { box-shadow: 0 3px 12px rgba(3,79,90,.1); }
+
+  /* Done card styling */
+  .card.done {
+    border-color: #B8DCBE;
+    background: #F4FBF5;
+  }
+  @media (prefers-color-scheme: dark) {
+    .card.done { background: #0F2A14; border-color: #1E4A25; }
+  }
+  :root[data-theme="dark"] .card.done { background: #0F2A14; border-color: #1E4A25; }
+  :root[data-theme="light"] .card.done { background: #F4FBF5; border-color: #B8DCBE; }
+
+  .done-badge {
+    position: absolute; top: 12px; right: 12px;
+    font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 4px;
+    background: var(--success-bg); color: var(--success);
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  .card.done .card-title { color: var(--success); }
+  .card.done .card-desc { opacity: .75; }
+
+  .card-top { display: flex; align-items: flex-start; gap: 11px; }
+  .card-icon { font-size: 22px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+  .card-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; flex: 1; padding-right: 60px; }
+  .card-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .tag {
+    font-size: 10px; font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 4px;
+  }
+  .tag.high     { background: #DCFCE7; color: #166534; }
+  .tag.medium   { background: var(--warn-bg); color: var(--warn); }
+  .tag.easy     { background: var(--teal-soft); color: var(--teal-mid); }
+  .tag.moderate { background: #E0F2FE; color: #0369A1; }
+  .tag.complex  { background: var(--purple-bg); color: var(--purple); }
+
+  .no-results {
+    grid-column: 1/-1; text-align:center; color:var(--muted);
+    font-size: 14px; padding: 60px 0;
+  }
+
+  .section-head {
+    grid-column: 1/-1;
+    display: flex; align-items: center; gap: 10px;
+    padding-top: 6px; margin-top: 8px;
+  }
+  .section-head .sec-icon { font-size: 18px; }
+  .section-head .sec-title { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .section-head .sec-line { flex: 1; height: 1px; background: var(--border); }
+  .section-head .sec-count { font-size: 11px; color: var(--muted); }
+</style>
+
+<div class="page-header">
+  <div class="brand">
+    <div class="dove">🕊️</div>
+    <div class="brand-name">Gomry<small>Pre-Beta Feature Backlog</small></div>
+  </div>
+  <div class="header-meta">
+    <strong>2-week sprint window</strong><br>
+    57 features · 9 categories · <strong style="color:#7EE8A2">7 done</strong><br>
+    Filter by impact or effort below
+  </div>
+</div>
+
+<div class="sticky-bar">
+  <div class="filters-wrap">
+    <div class="filter-row">
+      <span class="filter-label">Category</span>
+      <span class="chip active" data-filter="cat" data-val="all">All</span>
+      <span class="chip" data-filter="cat" data-val="trust">🛡️ Trust &amp; Safety</span>
+      <span class="chip" data-filter="cat" data-val="discovery">🔍 Discovery</span>
+      <span class="chip" data-filter="cat" data-val="comms">💬 Chat &amp; Comms</span>
+      <span class="chip" data-filter="cat" data-val="traveler">✈️ Traveler</span>
+      <span class="chip" data-filter="cat" data-val="sender">📦 Sender</span>
+      <span class="chip" data-filter="cat" data-val="network">👥 Network</span>
+      <span class="chip" data-filter="cat" data-val="credits">🪙 Credits</span>
+      <span class="chip" data-filter="cat" data-val="profile">👤 Profile</span>
+      <span class="chip" data-filter="cat" data-val="ux">✨ UX / Polish</span>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Impact</span>
+      <span class="chip" data-filter="impact" data-val="high">🔥 High</span>
+      <span class="chip" data-filter="impact" data-val="medium">Medium</span>
+      <div class="sep"></div>
+      <span class="filter-label">Effort</span>
+      <span class="chip" data-filter="effort" data-val="easy">Easy</span>
+      <span class="chip" data-filter="effort" data-val="moderate">Moderate</span>
+      <span class="chip" data-filter="effort" data-val="complex">Complex</span>
+      <div class="sep"></div>
+      <span class="chip done-chip" data-filter="done" data-val="true">✅ Done</span>
+      <span class="count-badge" id="count"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+const CAT_META = {
+  trust:     { icon:'🛡️', label:'Trust & Safety' },
+  discovery: { icon:'🔍', label:'Discovery & Matching' },
+  comms:     { icon:'💬', label:'Chat & Comms' },
+  traveler:  { icon:'✈️', label:'Traveler Experience' },
+  sender:    { icon:'📦', label:'Sender Experience' },
+  network:   { icon:'👥', label:'Network & Social' },
+  credits:   { icon:'🪙', label:'Credits & Economy' },
+  profile:   { icon:'👤', label:'Profile & Identity' },
+  ux:        { icon:'✨', label:'UX & Polish' },
+};
+
+const FEATURES = [
+  // TRUST & SAFETY
+  { icon:'📸', title:'Profile photo upload', desc:'Let users upload a photo via Supabase Storage. A face is the single biggest trust signal on the platform — initials alone make the app feel anonymous.', cat:'trust', impact:'high', effort:'moderate' },
+  { icon:'🛡️', title:'Trust score on trip & parcel cards', desc:'Composite trust score (ratings + deliveries completed + network depth) shown directly on trip and parcel cards, so senders can compare travelers at a glance.', cat:'trust', impact:'high', effort:'moderate' },
+  { icon:'🚩', title:'Report user / flag content', desc:'Simple one-tap report flow for trips, parcels, and profiles. Stores reports in Supabase; no admin dashboard needed for the private beta — just collect the signals.', cat:'trust', impact:'high', effort:'easy', done: true },
+  { icon:'🪪', title:'Self-declared identity verification', desc:'"I confirm my identity matches my profile" with document type selection (passport / ID / driver\'s licence). Shows a "Self-verified" badge. No KYC infrastructure required.', cat:'trust', impact:'medium', effort:'easy' },
+  { icon:'🚫', title:'Block user', desc:'Prevent a blocked user from seeing your trips, parcels, or messaging you. Stored in Supabase and enforced in query filters.', cat:'trust', impact:'medium', effort:'moderate' },
+  { icon:'📋', title:'Prohibited items joint confirmation', desc:'At booking confirmation, both parties explicitly accept the prohibited items list. Creates a shared acceptance record and reduces disputes later.', cat:'trust', impact:'high', effort:'easy' },
+  { icon:'📍', title:'Handover location pin', desc:'Traveler and sender agree on a meeting point — drop a pin or enter a landmark name. Reduces last-minute coordination confusion on departure day.', cat:'trust', impact:'high', effort:'moderate' },
+
+  // DISCOVERY
+  { icon:'🔔', title:'Push notifications (FCM)', desc:'Firebase Cloud Messaging for match requests, booking events, chat messages, and delivery updates. Without this, users must open the app to discover anything happened. The single highest-impact feature for beta retention.', cat:'discovery', impact:'high', effort:'complex' },
+  { icon:'🔕', title:'"Alert me for this route"', desc:'Sender sets a saved route (e.g. Paris → Algiers) and gets a push notification when a new trip is posted. Essential for low-frequency or niche city pairs.', cat:'discovery', impact:'high', effort:'moderate' },
+  { icon:'🗓️', title:'Date-range trip search', desc:'Filter Explore trips by departure window ("next 2 weeks", "this month"). Currently there is no granular date filtering.', cat:'discovery', impact:'high', effort:'easy' },
+  { icon:'🗺️', title:'Map view for trips', desc:'Show trip routes as curved arcs on a map (origin → destination). Visually distinctive and on-brand for a travel marketplace. Big wow factor for new users.', cat:'discovery', impact:'medium', effort:'complex' },
+  { icon:'📦', title:'Parcel size compatibility indicator', desc:'On each trip card, show which sizes still have capacity (S ✓  M ✓  L ✗). Senders instantly see if their parcel fits without opening the detail screen.', cat:'discovery', impact:'high', effort:'easy', done: true },
+  { icon:'⚡', title:'"Departing soon" badge on trips', desc:'Highlight trips leaving within 72 h with an orange badge. Creates urgency and helps senders with tight deadlines find the right traveler fast.', cat:'discovery', impact:'medium', effort:'easy' },
+  { icon:'🤝', title:'Suggested matches on Home', desc:'"3 trips match your parcel to Algiers this week" — a targeted match widget above the trip feed. Directly drives the booking conversion that generates credits.', cat:'discovery', impact:'high', effort:'moderate' },
+
+  // CHAT & COMMS
+  { icon:'🖼️', title:'Image sharing in chat', desc:'Send photos of the parcel, its packaging, or the handover point. Essential for confirming parcel condition before handover and for dispute resolution.', cat:'comms', impact:'high', effort:'moderate' },
+  { icon:'✅', title:'Read receipts in chat', desc:'Show "Seen" under messages. Reduces follow-up anxiety — the sender knows the traveler actually read the message.', cat:'comms', impact:'medium', effort:'easy', done: true },
+  { icon:'💬', title:'Quick-reply message templates', desc:'Pre-written tappable replies: "I\'ll be there at 18h", "Parcel is ready", "Meet at Terminal 2D". Reduces friction for mobile users and non-native typers.', cat:'comms', impact:'medium', effort:'easy' },
+  { icon:'📱', title:'WhatsApp handoff button in chat', desc:'A "Continue on WhatsApp" button that opens wa.me with the other user\'s number (requires consent). Meets users where they already communicate for family coordination.', cat:'comms', impact:'high', effort:'easy' },
+  { icon:'🔕', title:'Mute conversation', desc:'Mute push notifications per booking thread. Useful once delivery is arranged and both parties are just waiting.', cat:'comms', impact:'medium', effort:'easy' },
+
+  // TRAVELER
+  { icon:'📤', title:'Trip sharing via native share sheet', desc:'One-tap share a trip link via WhatsApp, SMS, or copy to clipboard. Travelers naturally share trips in family WhatsApp groups — this is free organic growth with zero marketing cost.', cat:'traveler', impact:'high', effort:'easy', done: true },
+  { icon:'🛣️', title:'Multi-stop trips', desc:'Traveler adds a stopover city (Paris → Lyon → Algiers). Expands the matching surface significantly and reflects how many flights actually work.', cat:'traveler', impact:'medium', effort:'complex' },
+  { icon:'📅', title:'Calendar view of my trips', desc:'Trips tab with a monthly calendar grid showing departure dates. Better at-a-glance planning for travelers who make multiple trips per month.', cat:'traveler', impact:'medium', effort:'moderate' },
+  { icon:'📊', title:'Live capacity tracker on trip card', desc:'Show remaining capacity (2 of 3 small slots used) on the traveler\'s own trip card so they know how full they are without opening the detail.', cat:'traveler', impact:'high', effort:'easy' },
+  { icon:'🧳', title:'Regular routes on traveler profile', desc:'Traveler sets their typical routes (Paris ↔ Algiers, monthly). Shown on their profile and used for proactive match suggestions on the Home screen.', cat:'traveler', impact:'medium', effort:'moderate' },
+  { icon:'🏅', title:'Verified traveler badge', desc:'Auto-awarded after completing N deliveries (e.g. 3). Appears on trip cards and profiles. The first meaningful progression signal that drives repeat use without heavy gamification.', cat:'traveler', impact:'high', effort:'easy', done: true },
+
+  // SENDER
+  { icon:'📍', title:'Parcel tracking timeline (prominent)', desc:'A visual step-by-step timeline of the parcel\'s journey (Requested → Accepted → Handover → In Transit → Delivered) as the primary parcel view, not buried inside a booking detail.', cat:'sender', impact:'high', effort:'moderate' },
+  { icon:'🧾', title:'Receiver information field', desc:'Sender specifies who collects the parcel on the other end: name + phone number. Displayed to the traveler for final delivery. A real-world requirement that currently has no field.', cat:'sender', impact:'high', effort:'easy', done: true },
+  { icon:'📷', title:'Parcel photo (proof of condition)', desc:'Sender uploads a photo of the parcel before handover; traveler can upload a delivery photo on completion. Provides evidence for dispute resolution and builds trust between strangers.', cat:'sender', impact:'high', effort:'moderate' },
+  { icon:'📋', title:'Multiple parcels per booking', desc:'Sender books 2–3 small items under one booking (medicine + documents + gift). A very common real-world case for France–Algeria shipments.', cat:'sender', impact:'medium', effort:'complex' },
+  { icon:'📅', title:'Estimated delivery date', desc:'Based on trip departure date, show "Expected delivery: around Aug 22" on the parcel card. Simple arithmetic, high reassurance value for anxious senders.', cat:'sender', impact:'medium', effort:'easy' },
+  { icon:'💾', title:'Parcel draft auto-save', desc:'Auto-save the create-parcel form in progress so users can come back to it. Reduces drop-off from the multi-field form on first use.', cat:'sender', impact:'medium', effort:'easy' },
+
+  // NETWORK
+  { icon:'📨', title:'Invite contacts via WhatsApp / SMS', desc:'One-tap "Invite a contact" that opens WhatsApp or SMS with a pre-written message and a deep link to Gomry. The primary growth loop for a trust-network app — every existing user is a referral channel.', cat:'network', impact:'high', effort:'easy' },
+  { icon:'👥', title:'Mutual contacts count on profiles', desc:'"3 contacts in common" shown on a traveler\'s profile. The most powerful trust signal in a social network — it reframes a stranger as a near-peer.', cat:'network', impact:'high', effort:'moderate' },
+  { icon:'📰', title:'Network activity feed (light)', desc:'"Karim just completed a delivery", "Sara posted a trip Paris → Algiers". A lightweight feed in the Network tab that makes the community feel active and alive between your own trips.', cat:'network', impact:'medium', effort:'moderate' },
+  { icon:'🔗', title:'Shareable profile link', desc:'Each user gets a personal link (gomry.app/u/username). Travelers share it in WhatsApp groups to attract senders directly without going through Explore.', cat:'network', impact:'medium', effort:'moderate' },
+  { icon:'📊', title:'Network depth widget', desc:'"Your network: 12 direct contacts · 47 friends-of-friends" on the Network tab. Makes the trust graph tangible and motivates users to grow it.', cat:'network', impact:'medium', effort:'easy' },
+
+  // CREDITS
+  { icon:'🎁', title:'Credit gifting between users', desc:'Send credits to another user ("Thanks for the delivery, here\'s a small tip"). Deepens reciprocity, community feeling, and turns credits into a social currency.', cat:'credits', impact:'medium', effort:'moderate' },
+  { icon:'💡', title:'"Earn more" opportunities widget', desc:'"4 parcels are waiting for your Paris→Algiers route — carry them to earn 20 credits." A targeted home screen card that drives traveler posting directly from the sender demand signal.', cat:'credits', impact:'high', effort:'moderate' },
+  { icon:'📈', title:'Credits leaderboard (light)', desc:'Top earners this month shown on the Network or Credits tab. Keeps the economy visible and adds a light competitive layer without heavy gamification.', cat:'credits', impact:'medium', effort:'easy' },
+  { icon:'⚠️', title:'Low balance warning', desc:'When a sender has < 5 credits (cost of one small parcel), show a nudge banner encouraging them to carry a parcel to earn more before they hit zero.', cat:'credits', impact:'high', effort:'easy' },
+  { icon:'🔄', title:'Automatic credit refund on cancellation', desc:'If a booking is cancelled before handover, automatically refund the sender\'s full credit debit. Essential for trust — users must know they won\'t lose credits on a no-show.', cat:'credits', impact:'high', effort:'moderate' },
+
+  // PROFILE
+  { icon:'🌍', title:'Languages spoken on profile', desc:'User selects French / Arabic / Tamazight / English. Displayed on their profile. Critical for France–Algeria where many senders strongly prefer to communicate in darija or Tamazight.', cat:'profile', impact:'high', effort:'easy' },
+  { icon:'✏️', title:'Bio / about section', desc:'Free-text "about me" field. A single sentence — "Algerian living in Paris, travel monthly for work" — builds instant human trust that a rating number alone cannot.', cat:'profile', impact:'medium', effort:'easy' },
+  { icon:'📊', title:'Profile completion meter', desc:'Progress bar nudging users to add photo, bio, and languages. Incomplete profiles get fewer responses and this gives users a concrete reason to fill them in.', cat:'profile', impact:'medium', effort:'easy' },
+  { icon:'🔒', title:'Privacy settings', desc:'Control who can see your trips (network only / public), your profile, and whether your phone number is shareable. Especially relevant for users who are cautious about privacy.', cat:'profile', impact:'medium', effort:'moderate' },
+  { icon:'🏆', title:'Beta tester founder badge', desc:'A special badge on profiles of the first cohort. Beta users who feel like founders are significantly more likely to stay, refer others, and forgive rough edges.', cat:'profile', impact:'medium', effort:'easy' },
+
+  // UX / POLISH
+  { icon:'🎠', title:'Onboarding carousel (first-launch walkthrough)', desc:'4-slide illustrated carousel shown only on first launch. Covers the concept, network, credits, and permissions. Implemented with sembast persistence — never shows again after the first run. Permissions wired to OS dialogs on Android.', cat:'ux', impact:'high', effort:'easy', done: true },
+  { icon:'🌙', title:'Dark mode', desc:'System-aware dark theme. A large portion of French-Algerian Android users run system dark mode — the current app is jarring for them at night.', cat:'ux', impact:'medium', effort:'moderate' },
+  { icon:'🌐', title:'Arabic language + RTL layout', desc:'Arabic UI translation with full right-to-left layout support. A major differentiator for the Algeria market. Many users think and text in darija — an Arabic UI feels like a product built for them.', cat:'ux', impact:'high', effort:'complex' },
+  { icon:'📲', title:'In-app feedback & bug report button', desc:'"Report a bug" in Settings that emails the team with device info and an optional screenshot. Non-negotiable during a private beta — email-based feedback has 95% drop-off.', cat:'ux', impact:'high', effort:'easy' },
+  { icon:'🖼️', title:'Empty state illustrations for all screens', desc:'Branded empty states: "No trips yet — post your first trip", "Your network is empty — invite a contact". Currently some screens show generic or no empty states.', cat:'ux', impact:'medium', effort:'easy' },
+  { icon:'🔍', title:'Global search bar', desc:'Search across trips, parcels, and users from one search bar. Reduces friction for power users who know exactly what they\'re looking for.', cat:'ux', impact:'medium', effort:'complex' },
+  { icon:'↩️', title:'Undo acceptance (5-minute grace period)', desc:'5-minute window after a traveler accepts a request where they can undo it. Prevents accidental acceptances from a misclick.', cat:'ux', impact:'medium', effort:'moderate' },
+  { icon:'🎉', title:'Delivery completion celebration', desc:'A confetti moment or branded animation when a delivery is confirmed complete. Reinforces the positive loop and makes the completion feel earned and special.', cat:'ux', impact:'medium', effort:'easy' },
+  { icon:'📲', title:'Android home screen widget', desc:'Android app widget showing active booking status and credits balance. A high-stickiness power-user feature — keeps Gomry visible even when the app is closed.', cat:'ux', impact:'medium', effort:'complex' },
+  { icon:'🔑', title:'Biometric app lock', desc:'Face ID / fingerprint to open the app. A trust and privacy signal — users store personal and financial data here and some will ask for this before sharing with family.', cat:'ux', impact:'medium', effort:'moderate' },
+  { icon:'📋', title:'First-use onboarding checklist', desc:'"Get started" checklist on Home for new users: add photo → post a trip or parcel → invite a contact. Drives first-session activation toward the moments that create retention.', cat:'ux', impact:'high', effort:'easy' },
+];
+
+const state = { cat: 'all', impact: null, effort: null, done: null };
+
+function render() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+
+  const filtered = FEATURES.filter(f => {
+    if (state.cat !== 'all' && f.cat !== state.cat) return false;
+    if (state.impact && f.impact !== state.impact) return false;
+    if (state.effort && f.effort !== state.effort) return false;
+    if (state.done === 'true' && !f.done) return false;
+    return true;
+  });
+
+  document.getElementById('count').textContent = `${filtered.length} feature${filtered.length !== 1 ? 's' : ''}`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="no-results">No features match these filters.</div>';
+    return;
+  }
+
+  if (state.cat === 'all') {
+    const cats = [...new Set(FEATURES.map(f => f.cat))];
+    cats.forEach(cat => {
+      const items = filtered.filter(f => f.cat === cat);
+      if (!items.length) return;
+      const meta = CAT_META[cat];
+      const head = document.createElement('div');
+      head.className = 'section-head';
+      head.innerHTML = `<span class="sec-icon">${meta.icon}</span><span class="sec-title">${meta.label}</span><div class="sec-line"></div><span class="sec-count">${items.length}</span>`;
+      grid.appendChild(head);
+      items.forEach(f => grid.appendChild(makeCard(f)));
+    });
+  } else {
+    filtered.forEach(f => grid.appendChild(makeCard(f)));
+  }
+}
+
+function makeCard(f) {
+  const impactLabel = f.impact === 'high' ? '🔥 High impact' : 'Medium impact';
+  const effortLabel = { easy:'Easy', moderate:'Moderate', complex:'Complex' }[f.effort];
+  const card = document.createElement('div');
+  card.className = 'card' + (f.done ? ' done' : '');
+  card.innerHTML = `
+    ${f.done ? '<div class="done-badge">✅ Done</div>' : ''}
+    <div class="card-top">
+      <span class="card-icon">${f.icon}</span>
+      <span class="card-title">${f.title}</span>
+    </div>
+    <div class="card-desc">${f.desc}</div>
+    <div class="card-tags">
+      <span class="tag ${f.impact}">${impactLabel}</span>
+      <span class="tag ${f.effort}">${effortLabel}</span>
+    </div>`;
+  return card;
+}
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const type = chip.dataset.filter;
+    const val  = chip.dataset.val;
+
+    if (type === 'cat') {
+      state.cat = val;
+      document.querySelectorAll('[data-filter="cat"]').forEach(c => c.classList.toggle('active', c.dataset.val === val));
+    } else {
+      if (state[type] === val) {
+        state[type] = null;
+        chip.classList.remove('active');
+      } else {
+        state[type] = val;
+        document.querySelectorAll(`[data-filter="${type}"]`).forEach(c => c.classList.toggle('active', c.dataset.val === val));
+      }
+    }
+    render();
+  });
+});
+
+render();
+</script>
