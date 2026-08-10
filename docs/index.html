@@ -164,7 +164,7 @@
   </div>
   <div class="header-meta">
     <strong>2-week sprint window</strong><br>
-    58 features · 9 categories · <strong style="color:#7EE8A2">12 done</strong><br>
+    58 features · 9 categories · <strong style="color:#7EE8A2">15 done</strong><br>
     Filter by impact or effort below
   </div>
 </div>
@@ -219,7 +219,7 @@ const CAT_META = {
 
 const FEATURES = [
   // TRUST & SAFETY
-  { icon:'📸', title:'Profile photo upload', desc:'Let users upload a photo via Supabase Storage. A face is the single biggest trust signal on the platform — initials alone make the app feel anonymous.', cat:'trust', impact:'high', effort:'moderate' },
+  { icon:'📸', title:'Profile photo upload', desc:'Let users upload a photo via Supabase Storage. A face is the single biggest trust signal on the platform — initials alone make the app feel anonymous.', cat:'trust', impact:'high', effort:'moderate', done: true },
   { icon:'🛡️', title:'Trust score on trip & parcel cards', desc:'Composite trust score (ratings + deliveries completed + network depth) shown directly on trip and parcel cards, so senders can compare travelers at a glance.', cat:'trust', impact:'high', effort:'moderate' },
   { icon:'🚩', title:'Report user / flag content', desc:'Simple one-tap report flow for trips, parcels, and profiles. Stores reports in Supabase; no admin dashboard needed for the private beta — just collect the signals.', cat:'trust', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'🪪', title:'Self-declared identity verification', desc:'"I confirm my identity matches my profile" with document type selection (passport / ID / driver\'s licence). Shows a "Self-verified" badge. No KYC infrastructure required.', cat:'trust', impact:'medium', effort:'easy' },
@@ -248,7 +248,7 @@ const FEATURES = [
   { icon:'🛣️', title:'Multi-stop trips', desc:'Traveler adds a stopover city (Paris → Lyon → Algiers). Expands the matching surface significantly and reflects how many flights actually work.', cat:'traveler', impact:'medium', effort:'complex' },
   { icon:'📅', title:'Calendar view of my trips', desc:'Trips tab with a monthly calendar grid showing departure dates. Better at-a-glance planning for travelers who make multiple trips per month.', cat:'traveler', impact:'medium', effort:'moderate' },
   { icon:'📊', title:'Live capacity tracker on trip card', desc:'Show remaining capacity (2 of 3 small slots used) on the traveler\'s own trip card so they know how full they are without opening the detail.', cat:'traveler', impact:'high', effort:'easy', done: true, author: 'Merwan' },
-  { icon:'🧳', title:'Regular routes on traveler profile', desc:'Traveler sets their typical routes (Paris ↔ Algiers, monthly). Shown on their profile and used for proactive match suggestions on the Home screen.', cat:'traveler', impact:'medium', effort:'moderate' },
+  { icon:'🧳', title:'Regular routes on traveler profile', desc:'Traveler sets their typical routes (Paris ↔ Algiers, monthly). Shown on their profile and used for proactive match suggestions on the Home screen.', cat:'traveler', impact:'medium', effort:'moderate', done: true },
   { icon:'🏅', title:'Verified traveler badge', desc:'Auto-awarded after completing N deliveries (e.g. 3). Appears on trip cards and profiles. The first meaningful progression signal that drives repeat use without heavy gamification.', cat:'traveler', impact:'high', effort:'easy', done: true, author: 'Merwan' },
 
   // SENDER
@@ -276,7 +276,7 @@ const FEATURES = [
 
   // PROFILE
   { icon:'🌍', title:'Languages spoken on profile', desc:'User selects French / Arabic / Tamazight / English. Displayed on their profile. Critical for France–Algeria where many senders strongly prefer to communicate in darija or Tamazight.', cat:'profile', impact:'high', effort:'easy' },
-  { icon:'✏️', title:'Bio / about section', desc:'Free-text "about me" field. A single sentence — "Algerian living in Paris, travel monthly for work" — builds instant human trust that a rating number alone cannot.', cat:'profile', impact:'medium', effort:'easy' },
+  { icon:'✏️', title:'Bio / about section', desc:'Free-text "about me" field. A single sentence — "Algerian living in Paris, travel monthly for work" — builds instant human trust that a rating number alone cannot.', cat:'profile', impact:'medium', effort:'easy', done: true },
   { icon:'📊', title:'Profile completion meter', desc:'Progress bar nudging users to add photo, bio, and languages. Incomplete profiles get fewer responses and this gives users a concrete reason to fill them in.', cat:'profile', impact:'medium', effort:'easy' },
   { icon:'🔒', title:'Privacy settings', desc:'Control who can see your trips (network only / public), your profile, and whether your phone number is shareable. Especially relevant for users who are cautious about privacy.', cat:'profile', impact:'medium', effort:'moderate' },
   { icon:'🏆', title:'Beta tester founder badge', desc:'A special badge on profiles of the first cohort. Beta users who feel like founders are significantly more likely to stay, refer others, and forgive rough edges.', cat:'profile', impact:'medium', effort:'easy' },
