@@ -1,7 +1,7 @@
 {
-  "versionName": "0.4.9",
-  "versionCode": 16,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.9/gomry-v0.4.9.apk",
-  "sha256": "205cc8891926b46c11a7230b7eebf8fad0f92c4b6a1d7ea1d31f04f0c549f036",
-  "notes": "Parcel tracking progress bar on parcel cards, profile photo upload, route preferences, greeting fix, home screen instant name."
+  "versionName": "0.4.10",
+  "versionCode": 17,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.10/gomry-v0.4.10.apk",
+  "sha256": "77493f2e37d6814a911db83063880364bc1d18cada81b370b0df62bfd851010c",
+  "notes": "Fix in-app update install loop — APK now opens system installer correctly on all Android versions."
 }
