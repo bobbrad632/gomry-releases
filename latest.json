@@ -1,7 +1,7 @@
 {
-  "versionName": "0.4.10",
-  "versionCode": 17,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.4.10/gomry-v0.4.10.apk",
-  "sha256": "77493f2e37d6814a911db83063880364bc1d18cada81b370b0df62bfd851010c",
-  "notes": "Fix in-app update install loop — APK now opens system installer correctly on all Android versions."
+  "versionName": "0.5.0",
+  "versionCode": 18,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.0/gomry-v0.5.0.apk",
+  "sha256": "aa8272ce99a3089706c3f9870979d2f847813fd2b408740124c572881adcd77f",
+  "notes": "Push notifications complete: requestDeclined, incoming network invite, booking accepted push. Carousel images refreshed."
 }
