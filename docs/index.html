@@ -165,7 +165,7 @@
   </div>
   <div class="header-meta">
     <strong>2-week sprint window</strong><br>
-    58 features · 9 categories · <strong style="color:#7EE8A2">15 done</strong><br>
+    59 features · 9 categories · <strong style="color:#7EE8A2">16 done</strong><br>
     Filter by impact or effort below
   </div>
 </div>
@@ -283,6 +283,7 @@ const FEATURES = [
   { icon:'🏆', title:'Beta tester founder badge', desc:'A special badge on profiles of the first cohort. Beta users who feel like founders are significantly more likely to stay, refer others, and forgive rough edges.', cat:'profile', impact:'medium', effort:'easy' },
 
   // UX / POLISH
+  { icon:'⚡', title:'Real-time event-driven updates', desc:'Replace 30-second polling timer with a typed AppEvent sealed class hierarchy (TripChanged, BookingChanged, CreditsChanged, MessageReceived, etc.). Each screen subscribes only to the events it cares about via StreamSubscription. Supabase Realtime uses per-table user-scoped filters instead of a single broad subscription. App bar unread counts driven by ValueNotifiers updated on MessageReceived / NotificationReceived events. Zero polling — screens update the instant a change occurs.', cat:'ux', impact:'high', effort:'complex', done: true },
   { icon:'🎠', title:'Onboarding carousel (first-launch walkthrough)', desc:'4-slide illustrated carousel shown only on first launch. Covers the concept, network, credits, and permissions. Implemented with sembast persistence — never shows again after the first run. Permissions wired to OS dialogs on Android.', cat:'ux', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'🌙', title:'Dark mode', desc:'System-aware dark theme. A large portion of French-Algerian Android users run system dark mode — the current app is jarring for them at night.', cat:'ux', impact:'medium', effort:'moderate' },
   { icon:'🌐', title:'Arabic language + RTL layout', desc:'Arabic UI translation with full right-to-left layout support. A major differentiator for the Algeria market. Many users think and text in darija — an Arabic UI feels like a product built for them.', cat:'ux', impact:'high', effort:'complex' },
