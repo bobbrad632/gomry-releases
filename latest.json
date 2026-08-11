@@ -1,7 +1,7 @@
 {
-  "versionName": "0.5.1",
-  "versionCode": 19,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.1/gomry-v0.5.1.apk",
-  "sha256": "5d8cb87708e1117cea16e4313ded06af5a81baec48ff7c92ff2dee1aca416359",
-  "notes": "Push notifications fixed, faster chat and network tab, white dove notification icon."
+  "versionName": "0.5.2",
+  "versionCode": 20,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.2/gomry-v0.5.2.apk",
+  "sha256": "c0c551b15336b12347fd3730e15a4430625c86ac4ebd996635b5192db11fb68f",
+  "notes": "Performance: parallel DB loading across all screens. Parcel status (chip + progress bar) now correctly updates through all lifecycle stages."
 }
