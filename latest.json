@@ -1,7 +1,7 @@
 {
-  "versionName": "0.5.0",
-  "versionCode": 18,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.0/gomry-v0.5.0.apk",
-  "sha256": "aa8272ce99a3089706c3f9870979d2f847813fd2b408740124c572881adcd77f",
-  "notes": "Push notifications complete: requestDeclined, incoming network invite, booking accepted push. Carousel images refreshed."
+  "versionName": "0.5.1",
+  "versionCode": 19,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.1/gomry-v0.5.1.apk",
+  "sha256": "5d8cb87708e1117cea16e4313ded06af5a81baec48ff7c92ff2dee1aca416359",
+  "notes": "Push notifications fixed, faster chat and network tab, white dove notification icon."
 }
