@@ -2,6 +2,6 @@
   "versionName": "0.5.5",
   "versionCode": 23,
   "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.5/gomry-v0.5.5.apk",
-  "sha256": "b42d0fa51caa83e6071366d7b009fa602ccc0192a221d2bab602f5a25576f3e9",
+  "sha256": "271c8314d43cff48e57f93c4aac6bc370305f998ff03717bc5c6c6d470b6383d",
   "notes": "Bug fixes: network ratings display, profile 'you' tag removed, planned trips layout, home screen booking action label, parcel card design."
 }
