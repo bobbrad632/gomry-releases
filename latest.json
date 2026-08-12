@@ -1,7 +1,7 @@
 {
-  "versionName": "0.5.4",
-  "versionCode": 22,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.4/gomry-v0.5.4.apk",
-  "sha256": "35a5712c9c59ac47caf46eaaabb2265fabac654f56c54029d7f37ca3ef34da40",
-  "notes": "Bug fixes: booking timeline progress bar, active booking ordering, reviews use real Supabase data, date+chip layout, rating stars, mutual connection card."
+  "versionName": "0.5.5",
+  "versionCode": 23,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.5/gomry-v0.5.5.apk",
+  "sha256": "b42d0fa51caa83e6071366d7b009fa602ccc0192a221d2bab602f5a25576f3e9",
+  "notes": "Bug fixes: network ratings display, profile 'you' tag removed, planned trips layout, home screen booking action label, parcel card design."
 }
