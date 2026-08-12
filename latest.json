@@ -1,7 +1,7 @@
 {
-  "versionName": "0.5.5",
-  "versionCode": 23,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.5/gomry-v0.5.5.apk",
-  "sha256": "271c8314d43cff48e57f93c4aac6bc370305f998ff03717bc5c6c6d470b6383d",
-  "notes": "Bug fixes: network ratings display, profile 'you' tag removed, planned trips layout, home screen booking action label, parcel card design."
+  "versionName": "0.5.6",
+  "versionCode": 24,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.6/gomry-v0.5.6.apk",
+  "sha256": "a39b183ccb2a15fd494867cd5d794cdf782341b68d56d43d702184c6b83b1ca5",
+  "notes": "Fix booking colors, parcel card redesign, profile trip chip style."
 }
