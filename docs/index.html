@@ -165,7 +165,7 @@
   </div>
   <div class="header-meta">
     <strong>2-week sprint window</strong><br>
-    59 features · 9 categories · <strong style="color:#7EE8A2">16 done</strong><br>
+    59 features · 9 categories · <strong style="color:#7EE8A2">18 done</strong><br>
     Filter by impact or effort below
   </div>
 </div>
@@ -235,7 +235,7 @@ const FEATURES = [
   { icon:'🗺️', title:'Map view for trips', desc:'Show trip routes as curved arcs on a map (origin → destination). Visually distinctive and on-brand for a travel marketplace. Big wow factor for new users.', cat:'discovery', impact:'medium', effort:'complex' },
   { icon:'📦', title:'Parcel size compatibility indicator', desc:'On each trip card, show which sizes still have capacity (S ✓  M ✓  L ✗). Senders instantly see if their parcel fits without opening the detail screen.', cat:'discovery', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'⚡', title:'"Departing soon" badge on trips', desc:'Highlight trips leaving within 72 h with an orange badge. Creates urgency and helps senders with tight deadlines find the right traveler fast.', cat:'discovery', impact:'medium', effort:'easy' },
-  { icon:'🤝', title:'Suggested matches on Home', desc:'"3 trips match your parcel to Algiers this week" — a targeted match widget above the trip feed. Directly drives the booking conversion that generates credits.', cat:'discovery', impact:'high', effort:'moderate' },
+  { icon:'🤝', title:'Suggested matches on Home', desc:'"3 trips match your parcel to Algiers this week" — a targeted match widget above the trip feed. Directly drives the booking conversion that generates credits.', cat:'discovery', impact:'high', effort:'moderate', done: true },
 
   // CHAT & COMMS
   { icon:'🖼️', title:'Image sharing in chat', desc:'Send photos of the parcel, its packaging, or the handover point. Essential for confirming parcel condition before handover and for dispute resolution.', cat:'comms', impact:'high', effort:'moderate' },
@@ -253,7 +253,7 @@ const FEATURES = [
   { icon:'🏅', title:'Verified traveler badge', desc:'Auto-awarded after completing N deliveries (e.g. 3). Appears on trip cards and profiles. The first meaningful progression signal that drives repeat use without heavy gamification.', cat:'traveler', impact:'high', effort:'easy', done: true, author: 'Merwan' },
 
   // SENDER
-  { icon:'📍', title:'Parcel tracking timeline (prominent)', desc:'A visual step-by-step timeline of the parcel\'s journey (Requested → Accepted → Handover → In Transit → Delivered) as the primary parcel view, not buried inside a booking detail.', cat:'sender', impact:'high', effort:'moderate' },
+  { icon:'📍', title:'Parcel tracking timeline (prominent)', desc:'A visual step-by-step timeline of the parcel\'s journey (Requested → Accepted → Handover → In Transit → Delivered) as the primary parcel view, not buried inside a booking detail.', cat:'sender', impact:'high', effort:'moderate', done: true },
   { icon:'🧾', title:'Receiver information field', desc:'Sender specifies who collects the parcel on the other end: name + phone number. Displayed to the traveler for final delivery. A real-world requirement that currently has no field.', cat:'sender', impact:'high', effort:'easy', done: true, author: 'Merwan' },
   { icon:'📷', title:'Parcel photo (proof of condition)', desc:'Sender uploads a photo of the parcel before handover; traveler can upload a delivery photo on completion. Provides evidence for dispute resolution and builds trust between strangers.', cat:'sender', impact:'high', effort:'moderate' },
   { icon:'📋', title:'Multiple parcels per booking', desc:'Sender books 2–3 small items under one booking (medicine + documents + gift). A very common real-world case for France–Algeria shipments.', cat:'sender', impact:'medium', effort:'complex' },
