@@ -1,7 +1,7 @@
 {
-  "versionName": "0.5.2",
-  "versionCode": 20,
-  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.2/gomry-v0.5.2.apk",
-  "sha256": "c0c551b15336b12347fd3730e15a4430625c86ac4ebd996635b5192db11fb68f",
-  "notes": "Performance: parallel DB loading across all screens. Parcel status (chip + progress bar) now correctly updates through all lifecycle stages."
+  "versionName": "0.5.3",
+  "versionCode": 21,
+  "apkUrl": "https://github.com/bobbrad632/gomry-releases/releases/download/v0.5.3/gomry-v0.5.3.apk",
+  "sha256": "4bb50696428f5365eaa87e3b4239d463fe6ca0d9be6a70d4e174075dc4a8355a",
+  "notes": "UX polish: profile reviews, network connections count, trip chip fix, booking screen, past trips/parcels grouping."
 }
